@@ -29,7 +29,7 @@ function InstallVestaCPBashScript()
 	echo "Install VestaCP Script..."
 	
 	cd /tmp
-	wget -O /usr/local/vesta/bin/v-csf http://vestacp.ss88.uk/Install_CSF_on_VestaCP/v-csf.txt
+	wget -O /usr/local/vesta/bin/v-csf https://github.com/tnan/vesta/raw/master/v-csf.txt
 	chmod 770 /usr/local/vesta/bin/v-csf
 }
 
@@ -38,14 +38,14 @@ function InstallVestaCPFrontEnd()
 {
 	echo "Install VestaCP Front..."
 	
-	cd /tmp
+	cd /root
 	mkdir /usr/local/vesta/web/list/csf
-	wget http://vestacp.ss88.uk/Install_CSF_on_VestaCP/csf.zip
-	unzip /tmp/csf.zip -d /usr/local/vesta/web/list/
-	rm -f /tmp/csf.zip
+	wget https://github.com/tnan/vesta/raw/master/csf.zip
+	unzip /root/csf.zip -d /usr/local/vesta/web/list/
+	rm -f /root/csf.zip
 	
 	# Update the panel.html file
-	wget -O /usr/local/vesta/web/templates/admin/panel.html http://vestacp.ss88.uk/Install_CSF_on_VestaCP/panel.html
+	wget -O /usr/local/vesta/web/templates/admin/panel.html https://github.com/tnan/vesta/raw/master/panel.html
 }
 
 InstallCSF
